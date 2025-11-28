@@ -8,12 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
 
     @GetMapping("/login/oauth2/code/client**")
-    public String code(){
+    public String code() {
         return "code";
-    }
-
-    @GetMapping("/test")
-    public String test(){
-        return "test";
     }
 }

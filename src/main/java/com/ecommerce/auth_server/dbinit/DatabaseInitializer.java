@@ -53,7 +53,7 @@ public class DatabaseInitializer implements CommandLineRunner {
                         .redirectUri("http://127.0.0.1:8080/login/oauth2/code/client")
                         .scope(OidcScopes.OPENID)
                         .scope(OidcScopes.PROFILE)
-                        .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                        .clientSettings(ClientSettings.builder().requireAuthorizationConsent(false).build())
                         .build();
         registeredClientRepository.save(registeredClient);
 
