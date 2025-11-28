@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: OAuth Auth Server
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_db
+    username: user
+    password: user
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+
+
+  flyway:
+    enabled: true
+
+secret: ${SECRET}
+
+rsa:
+  public-key: classpath:cert/public-key.pem
+  private-key: classpath:cert/private-key.pem
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web:
+            savedrequest: TRACE

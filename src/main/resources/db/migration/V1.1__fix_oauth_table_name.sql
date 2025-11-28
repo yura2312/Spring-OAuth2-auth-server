@@ -1,0 +1,1 @@
+ALTER TABLE registered_client RENAME TO oauth2_registered_client;
