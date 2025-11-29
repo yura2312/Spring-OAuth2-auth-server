@@ -1,0 +1,18 @@
+1. To get the Authorization code first paste this into your browser and
+them copy the value after code:
+http://127.0.0.1:8080/login/oauth2/code/client?code=<CODE_VALUE>
+
+PASTE THIS INTO YOUR BROWSER:
+http://127.0.0.1:8080/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://127.0.0.1:8080/login/oauth2/code/client&code_challenge=sbHlsiiKODRpeU8Y8fFtoazEoOrsXZ9_wwQsIdmKcAs&code_challenge_method=S256
+
+2. cURL to get Access code:
+
+curl --request POST \
+  --url http://localhost:8080/oauth2/token \
+  --header 'authorization: Basic Y2xpZW50OnN1cGVyU2VjcmV0' \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data grant_type=authorization_code \
+  --data code=<CODE_VALUE> \
+  --data redirect_uri=http://127.0.0.1:8080/login/oauth2/code/client \
+  --data code_verifier=r8n6c0_5z1wYHU0K-B-hBjbPedfWUU1wHR_tGrAhHOE \
+  --data client_id=client
